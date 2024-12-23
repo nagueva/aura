@@ -2,6 +2,12 @@
 
 **Aura** is a sleek and minimalist theme designed to elevate your MuOS experience. Featuring a blurred background image, refined iconography and a nice typography, it brings a modern touch to your handheld gaming world.
 
+## Screenshots
+
+### Main screen
+
+![Aura - Main screen](./theme/aura/image/static/muxlaunch/explore.png)
+
 ## Installation
 
 1. Download the `.zip` file from the releases page.
