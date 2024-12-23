@@ -10,7 +10,7 @@
 
 ## Installation
 
-1. Download the `.zip` file from the releases page.
+1. Download the `.zip` file from the [releases page](https://github.com/nagueva/aura/releases).
 2. Move the `.zip` file to your device within the `MUOS/theme` folder.
 4. Activate the theme in muOS settings.
 5. Enjoy!
@@ -18,6 +18,10 @@
 ## Supported devices
 
 - Anbernic RG40XX V (640x480)
+
+## Reporting Issues
+
+If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/nagueva/aura/issues).
 
 ## Credits
 
@@ -34,4 +38,4 @@
 
 ## License
 
-This theme is released under a [MIT License](./LICENSE). It means you can use and change this theme as you wish, but if you share a modified version, you must explicity mention I made the first version.
+This theme is released under the [MIT License](./LICENSE). You are free to use and modify this theme as you wish. However, if you share a modified version, you must explicitly mention that the original version was created by me.
