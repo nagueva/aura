@@ -1,4 +1,14 @@
-# Converting fonts
+# Fonts
+
+- Minimum size: 16px
+
+## Used fonts
+
+- Main font: Open Sans, Medium
+- Sizes:
+    - default: 20
+
+## Converting fonts
 
 - [LVGL: Font Converter](https://lvgl.io/tools/fontconverter)
     - Settings:
@@ -11,7 +21,7 @@
         - Output format: Binary
         - DO not check: font compression, horizontal subpixel rendering and glyph color.
 
-## TTF/WOFF font: Range
+### TTF/WOFF font: Range
 
 ```
 0x0020-0x007E
