@@ -35,6 +35,7 @@ If you encounter any issues or have suggestions for improvements, please [open a
 - **Single icons**:
     - History: [Adrien Coquet](https://www.behance.net/coquet_adrien) from [Noun Project](https://thenounproject.com/icon/history-2496446/) (CC BY 3.0)
     - Applications: [Ade Nur Hidayat](https://dribbble.com/adenurhidayat) from [Noun Project](https://thenounproject.com/icon/applications-3955850/) (CC BY 3.0)
+    - Ports: [AbtoCreative](https://www.behance.net/AbtoCreative) from [Noun Project](https://thenounproject.com/icon/ports-5252885/) (CC BY 3.0)
 
 ## License
 
