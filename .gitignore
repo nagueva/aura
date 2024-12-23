@@ -12,3 +12,5 @@ Thumbs.db
 .env
 # Ignore IDE-specific files
 .vscode/
+# Theme files
+theme/*.zip
