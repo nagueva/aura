@@ -1,6 +1,6 @@
 # ✨ Aura
 
-**Aura** is a sleek and minimalist theme designed to elevate your MuOS experience. Featuring a blurred background image, refined iconography and a nice typography – it brings a modern touch to your handheld gaming world.
+**Aura** is a sleek and minimalist theme designed to elevate your MuOS experience. Featuring a blurred background image, refined iconography and a nice typography, it brings a modern touch to your handheld gaming world.
 
 ## Installation
 
@@ -15,10 +15,13 @@
 
 ## Credits
 
-- **Font**: [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts
-- **Background image**: Aurora from [Autumn Gradients](https://basicappleguy.com/basicappleblog/autumn-gradients)(sep/2023) by [BasicAppleGuy](https://basicappleguy.com/).
-- **UI icons**: [Ionicons](https://ionic.io/ionicons)
-- **Controller icons set**: [VECTOGRAM Icon Set](https://thenounproject.com/browse/collection-icon/vectogram-6394/) by [Mark Davis](http://themizarkshow.com/).
+- **Fonts**:
+    - [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts
+- **Background image**:
+    - Aurora wallpaper from [Autumn Gradients](https://basicappleguy.com/basicappleblog/autumn-gradients) (sep/2023) by [BasicAppleGuy](https://basicappleguy.com/).
+- **Icon sets**:
+    - **UI icons**: [Ionicons](https://ionic.io/ionicons)
+    - **Controller icons**: [VECTOGRAM Icon Set](https://thenounproject.com/browse/collection-icon/vectogram-6394/) by [Mark Davis](http://themizarkshow.com/).
 - **Single icons**:
     - History: [Adrien Coquet](https://www.behance.net/coquet_adrien) from [Noun Project](https://thenounproject.com/icon/history-2496446/) (CC BY 3.0)
     - Applications: [Ade Nur Hidayat](https://dribbble.com/adenurhidayat) from [Noun Project](https://thenounproject.com/icon/applications-3955850/) (CC BY 3.0)
