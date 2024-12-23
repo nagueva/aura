@@ -1,6 +1,6 @@
-# ✨ Aura
+# ✨ Aura - muOS Theme
 
-**Aura** is a sleek and minimalist theme designed to elevate your [MuOS](https://muos.dev) experience. Featuring a blurred background image, refined iconography and a nice typography, it brings a modern touch to your handheld gaming world.
+**Aura** is a sleek and minimalist theme designed to elevate your [muOS](https://muos.dev) experience. Featuring a blurred background image, refined iconography and a nice typography, it brings a modern touch to your handheld gaming world.
 
 ## Screenshots
 
