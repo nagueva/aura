@@ -15,13 +15,13 @@
 4. Activate the theme in muOS settings.
 5. Enjoy!
 
-## Supported devices
-
-- Anbernic RG40XX V (640x480)
-
 ## Reporting Issues
 
 If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/nagueva/aura/issues).
+
+## Supported devices
+
+- Anbernic RG40XX V (640x480)
 
 ## Credits
 
