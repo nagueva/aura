@@ -13,7 +13,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 ${{ github.repository }} has been cloned to the runner."
-      - name: Create zip file
+      - name: Create zip files
         run: |
           cd ${{ github.workspace }}/theme/Aura
           zip -r ./Aura.zip ./
@@ -22,7 +22,7 @@ jobs:
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ${{ github.workspace }}/theme/Aura/Aura.zip
-          asset_name: release-package.zip
+          asset_name: Aura@${{ github.event.release.tag_name }}.zip
           asset_content_type: application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
