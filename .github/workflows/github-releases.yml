@@ -21,7 +21,7 @@ jobs:
           done
       - name: Upload releases
         run: |
-          for file in ${{ github.workspace }}/*.zip; do
+          for file in ${{ github.workspace }}/theme/*.zip; do
             echo "Uploading $file"
             gh release upload ${{ github.event.release.tag_name }} "$file" --clobber
           done
