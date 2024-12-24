@@ -39,4 +39,4 @@ If you encounter any issues or have suggestions for improvements, please [open a
 
 ## License
 
-This theme is released under the [MIT License](./LICENSE). You are free to use and modify this theme as you wish. However, if you share a modified version, you must explicitly mention that the original version was created by me.
+**Aura** is released under the [MIT License](./LICENSE), meaning it's free to use and modify. However, if a modified version is shared/distributed, it must include a clear reference to this original version.
