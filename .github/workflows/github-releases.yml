@@ -1,5 +1,5 @@
 name: Publish Releases
-run-name: New release available ${{ github.event.release.tag_name }} by ${{ github.actor }}
+run-name: New release available - ${{ github.event.release.tag_name }} by ${{ github.actor }}
 on:
   release:
     types: [published,prereleased]
