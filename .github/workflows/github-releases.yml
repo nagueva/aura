@@ -13,10 +13,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Create zip files
         run: |
-          cd ${{ github.workspace }}/theme/Aura
+          cd ${{ github.workspace }}/theme
           for dir in */ ; do
             cd $dir
-            zip -r "../../${dir%/}-${{ github.event.release.tag_name }}.zip" ./
+            zip -r "../${dir%/}-${{ github.event.release.tag_name }}.zip" ./
             cd ..
           done
           ls
