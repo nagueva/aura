@@ -1,5 +1,5 @@
-name: Publish Release Files
-run-name: New release ${{ github.event.release.tag_name }} by ${{ github.actor }}
+name: Theme Releases
+run-name: 🚀 ${{ github.event.release.tag_name }} - ${{ github.actor }}
 on:
   release:
     types: [published,prereleased]
@@ -16,7 +16,7 @@ jobs:
           cd ${{ github.workspace }}/theme
           for dir in */ ; do
             cd $dir
-            zip -r "../${dir%/}-${{ github.event.release.tag_name }}.zip" ./
+            zip -r "../${dir%/}.zip" ./
             cd ..
           done
       - name: Upload releases
