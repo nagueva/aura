@@ -2,7 +2,7 @@ name: Theme Releases
 run-name: 🚀 ${{ github.event.release.tag_name }} - ${{ github.actor }}
 on:
   release:
-    types: [published,prereleased]
+    types: [published]
 permissions:
   contents: write
 jobs:
