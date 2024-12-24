@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout
       - name: Create zip file
         run: |
           cd ${{ github.workspace }}/theme/Aura
           zip -r ../Aura.zip ./
       - name: Upload release - Aura
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ${{ github.workspace }}/theme/Aura.zip
