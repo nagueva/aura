@@ -16,12 +16,12 @@ jobs:
       - name: Create zip file
         run: |
           cd ${{ github.workspace }}/theme/Aura
-          zip -r ./Aura.zip ${{ github.workspace }}/theme/Aura/*
+          zip -r ./Aura.zip ./
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./Aura.zip
+          asset_path: ${{ github.workspace }}/theme/Aura/Aura.zip
           asset_name: release-package.zip
           asset_content_type: application/zip
         env:
