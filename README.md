@@ -6,11 +6,11 @@
 
 ### Main screen
 
-![Aura - Main screen](./theme/aura/preview.png)
+![Aura - Main screen](./theme/Aura/image/static/muxlaunch/explore.png)
 
 ## Installation
 
-1. Download the `.zip` file from the [releases page](https://github.com/nagueva/aura/releases).
+1. Download `Aura.zip` from the [releases page](https://github.com/nagueva/aura/releases).
 2. Move the `.zip` file to your device within the `MUOS/theme` folder.
 4. Activate the theme in muOS settings.
 5. Enjoy!
