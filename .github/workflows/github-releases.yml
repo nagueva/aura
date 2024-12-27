@@ -11,9 +11,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Create themes
+      - name: Compile theme
         run: |
-          cd ${{ github.workspace }}/theme
+          cd ${{ github.workspace }}/tools
+          python theme_compiler.py
+      - name: Create theme release zips
+        run: |
+          cd ${{ github.workspace }}/dist
           for dir in */ ; do
             cd $dir
             convert ./preview.png -resize 288x216 ./preview.png
@@ -26,7 +30,7 @@ jobs:
           done
       - name: Upload releases
         run: |
-          for file in ${{ github.workspace }}/theme/*.zip; do
+          for file in ${{ github.workspace }}/dist/*.zip; do
             echo "Uploading $file"
             gh release upload ${{ github.event.release.tag_name }} "$file" --clobber
           done
