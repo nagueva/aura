@@ -86,7 +86,14 @@ for root, dirs, files in os.walk(os.path.join(ROOT_DIR, 'theme')):
                     print(f"Creating {scheme_file}")
                     scheme_data = parse_file(os.path.join(scheme_path, scheme_file))
                     merged_data = default_data.copy()
-                    merged_data.update(scheme_data)
+                    for key, value in scheme_data.items():
+                        if key in merged_data:
+                            if isinstance(merged_data[key], dict) and isinstance(value, dict):
+                                merged_data[key].update(value)
+                            else:
+                                merged_data[key] = value
+                        else:
+                            merged_data[key] = value
                     formatted_data = format_to_file(merged_data)
                     output_path = os.path.join(ROOT_DIR, 'dist', dir_name, 'scheme', scheme_file)
                     os.makedirs(os.path.dirname(output_path), exist_ok=True)
