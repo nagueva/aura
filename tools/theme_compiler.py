@@ -1,9 +1,6 @@
-# THEME COMPILER: Create /dist folder with merged scheme files
 import shutil
 import os
 import re
-
-# Preparing the environment...
 
 # Define the default theme directory relative to the location of this file
 ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')
