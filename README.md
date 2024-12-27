@@ -6,7 +6,7 @@
 
 ### Main screen
 
-![Aura - Main screen](./theme/Aura/image/static/muxlaunch/explore.png)
+![Aura - Main screen](./docs/_images/screenshot.png)
 
 ## Installation
 
