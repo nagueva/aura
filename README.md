@@ -11,27 +11,22 @@
 
 ## Screenshots
 
-### Main screen
-
-![Aura - Main screen](./docs/_images/screenshot_001.png)
-
-### Folder list
-
-![Aura - Folder list](./docs/_images/screenshot_002.png)
-
-### Games list
-
-![Aura - Games list](./docs/_images/screenshot_003.png)
-
-### Reboot screen
-
-![Aura - Rebooting](./docs/_images/screenshot_004.png)
+<table>
+    <tr>
+        <td><img src="./docs/_images/screenshot_001.png" alt="Aura - Main screen"></td>
+        <td><img src="./docs/_images/screenshot_002.png" alt="Aura - Folders list"></td>
+    </tr>
+    <tr>
+        <td><img src="./docs/_images/screenshot_003.png" alt="Aura - Games list"></td>
+        <td><img src="./docs/_images/screenshot_004.png" alt="Aura - Reboot screen"></td>
+    </tr>
+</table>
 
 ## Reporting Issues
 
 If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/nagueva/aura/issues).
 
-## Supported devices
+## Tested devices
 
 - Anbernic RG40XX V (640x480)
 
