@@ -1,5 +1,7 @@
 # ✨ Aura - muOS Theme
 
+![GitHub Release](https://img.shields.io/github/v/release/nagueva/aura)
+
 **Aura** is a sleek and minimalist theme designed to elevate your [muOS](https://muos.dev) experience. Featuring a blurred background image, refined iconography and a nice typography, it brings a modern touch to your handheld gaming world.
 
 ## Installation
