@@ -4,8 +4,21 @@
 
 ## Screenshots
 
-| ![Aura - Main screen](./docs/_images/screenshot_001.png) | ![Aura - Folder list](./docs/_images/screenshot_002.png) |
-| ![Aura - Games list](./docs/_images/screenshot_001.png) | ![Aura - Rebooting](./docs/_images/screenshot_001.png) |
+### Main screen
+
+![Aura - Main screen](./docs/_images/screenshot_001.png)
+
+### Folder list
+
+![Aura - Folder list](./docs/_images/screenshot_002.png)
+
+### Games list
+
+![Aura - Games list](./docs/_images/screenshot_001.png)
+
+### Reboot screen
+
+![Aura - Rebooting](./docs/_images/screenshot_001.png)
 
 ## Installation
 
