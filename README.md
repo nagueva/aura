@@ -46,6 +46,7 @@ If you encounter any issues or have suggestions for improvements, please [open a
 **Icon sets**
 - **UI icons**: [Ionicons](https://ionic.io/ionicons)
 - **Controller icons**: [VECTOGRAM Icon Set](https://thenounproject.com/browse/collection-icon/vectogram-6394/) by [Mark Davis](http://themizarkshow.com/).
+
 **Icons**
 - History icon by [Adrien Coquet](https://www.behance.net/coquet_adrien) from [Noun Project](https://thenounproject.com/icon/ory-2496446/) (CC BY 3.0)
 - Applications icon by [Ade Nur Hidayat](https://dribbble.com/adenurhidayat) from [Noun Project](https://thenounproject.com/icon/applications-3955850/) (CC BY 3.0)
