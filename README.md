@@ -13,6 +13,14 @@
 4. Activate the theme in muOS settings.
 5. Enjoy!
 
+## Reporting Issues
+
+If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/nagueva/aura/issues).
+
+## Tested devices
+
+- Anbernic RG40XX V (640x480)
+
 ## Screenshots
 
 <table>
@@ -25,14 +33,6 @@
         <td><img src="./docs/_images/screenshot_004.png" alt="Aura - Reboot screen"></td>
     </tr>
 </table>
-
-## Reporting Issues
-
-If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/nagueva/aura/issues).
-
-## Tested devices
-
-- Anbernic RG40XX V (640x480)
 
 ## Credits
 
