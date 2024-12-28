@@ -1,6 +1,8 @@
 # ✨ Aura - muOS Theme
 
 ![GitHub Release](https://img.shields.io/github/v/release/nagueva/aura)
+![GitHub License](https://img.shields.io/github/license/nagueva/aura)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/nagueva/aura/total)
 
 **Aura** is a sleek and minimalist theme designed to elevate your [muOS](https://muos.dev) experience. Featuring a blurred background image, refined iconography and a nice typography, it brings a modern touch to your handheld gaming world.
 
@@ -34,18 +36,20 @@ If you encounter any issues or have suggestions for improvements, please [open a
 
 ## Credits
 
-- **Fonts**:
-    - [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts
-    - [Noto Sans](https://fonts.google.com/specimen/Noto+Sans) from Google Fonts
-- **Background image**:
-    - Aurora wallpaper from [Autumn Gradients](https://basicappleguy.com/basicappleblog/autumn-gradients) (sep/2023) by [BasicAppleGuy](https://basicappleguy.com/).
-- **Icon sets**:
-    - **UI icons**: [Ionicons](https://ionic.io/ionicons)
-    - **Controller icons**: [VECTOGRAM Icon Set](https://thenounproject.com/browse/collection-icon/vectogram-6394/) by [Mark Davis](http://themizarkshow.com/).
-- **Single icons**:
-    - History: [Adrien Coquet](https://www.behance.net/coquet_adrien) from [Noun Project](https://thenounproject.com/icon/history-2496446/) (CC BY 3.0)
-    - Applications: [Ade Nur Hidayat](https://dribbble.com/adenurhidayat) from [Noun Project](https://thenounproject.com/icon/applications-3955850/) (CC BY 3.0)
-    - Ports: [AbtoCreative](https://www.behance.net/AbtoCreative) from [Noun Project](https://thenounproject.com/icon/ports-5252885/) (CC BY 3.0)
+**Fonts**
+- [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts
+- [Noto Sans](https://fonts.google.com/specimen/Noto+Sans) from Google Fonts
+
+**Background image**
+- Aurora wallpaper from [Autumn Gradients](https://basicappleguy.com/basicappleblog/autumn-gradients) (sep/2023) by icAppleGuy](https://basicappleguy.com/).
+
+**Icon sets**
+- **UI icons**: [Ionicons](https://ionic.io/ionicons)
+- **Controller icons**: [VECTOGRAM Icon Set](https://thenounproject.com/browse/collection-icon/vectogram-6394/) by [Mark Davis](http://themizarkshow.com/).
+**Icons**
+- History icon by [Adrien Coquet](https://www.behance.net/coquet_adrien) from [Noun Project](https://thenounproject.com/icon/ory-2496446/) (CC BY 3.0)
+- Applications icon by [Ade Nur Hidayat](https://dribbble.com/adenurhidayat) from [Noun Project](https://thenounproject.com/icon/applications-3955850/) (CC BY 3.0)
+- Ports icon by [AbtoCreative](https://www.behance.net/AbtoCreative) from [Noun Project](https://thenounproject.com/icon/ports-5252885/) (CC BY 3.0)
 
 ## License
 
