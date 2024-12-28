@@ -2,6 +2,13 @@
 
 **Aura** is a sleek and minimalist theme designed to elevate your [muOS](https://muos.dev) experience. Featuring a blurred background image, refined iconography and a nice typography, it brings a modern touch to your handheld gaming world.
 
+## Installation
+
+1. Download `Aura.zip` from the [releases page](https://github.com/nagueva/aura/releases).
+2. Move the `.zip` file to your device within the `MUOS/theme` folder.
+4. Activate the theme in muOS settings.
+5. Enjoy!
+
 ## Screenshots
 
 ### Main screen
@@ -14,18 +21,11 @@
 
 ### Games list
 
-![Aura - Games list](./docs/_images/screenshot_001.png)
+![Aura - Games list](./docs/_images/screenshot_003.png)
 
 ### Reboot screen
 
-![Aura - Rebooting](./docs/_images/screenshot_001.png)
-
-## Installation
-
-1. Download `Aura.zip` from the [releases page](https://github.com/nagueva/aura/releases).
-2. Move the `.zip` file to your device within the `MUOS/theme` folder.
-4. Activate the theme in muOS settings.
-5. Enjoy!
+![Aura - Rebooting](./docs/_images/screenshot_004.png)
 
 ## Reporting Issues
 
