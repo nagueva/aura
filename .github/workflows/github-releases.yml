@@ -11,26 +11,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Convert bootlogo to .bmp
+      - name: Compile theme
         run: |
-          cd ${{ github.workspace }}/theme
+          cd ${{ github.workspace }}/tools
+          python theme_compiler.py
+      - name: Create theme release zips
+        run: |
+          cd ${{ github.workspace }}/dist
           for dir in */ ; do
             cd $dir
+            convert ./preview.png -resize 288x216 ./preview.png
             convert ./image/bootlogo.png ./image/bootlogo.bmp
             rm -rf ./image/bootlogo.png
-            cd ..
-          done
-      - name: Create zip files
-        run: |
-          cd ${{ github.workspace }}/theme
-          for dir in */ ; do
-            cd $dir
+            echo "${dir%/} (${{ github.event.release.tag_name }})" > ./theme_name.txt
+            cat ./theme_name.txt
             zip -r "../${dir%/}.zip" ./
             cd ..
           done
       - name: Upload releases
         run: |
-          for file in ${{ github.workspace }}/theme/*.zip; do
+          for file in ${{ github.workspace }}/dist/*.zip; do
             echo "Uploading $file"
             gh release upload ${{ github.event.release.tag_name }} "$file" --clobber
           done

@@ -4,9 +4,9 @@
 
 ## Used fonts
 
-- Main font: Open Sans, Medium
-- Sizes:
-    - default: 20
+- Default: Open Sans, Medium, 20
+- Header: Open Sans, Medium, 20
+- Footer: Open Sans, Medium, 18
 
 ## Converting fonts
 
