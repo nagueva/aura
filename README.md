@@ -27,6 +27,7 @@ If you encounter any issues or have suggestions for improvements, please [open a
 
 - **Fonts**:
     - [Open Sans](https://fonts.google.com/specimen/Open+Sans) from Google Fonts
+    - [Noto Sans](https://fonts.google.com/specimen/Noto+Sans) from Google Fonts
 - **Background image**:
     - Aurora wallpaper from [Autumn Gradients](https://basicappleguy.com/basicappleblog/autumn-gradients) (sep/2023) by [BasicAppleGuy](https://basicappleguy.com/).
 - **Icon sets**:
