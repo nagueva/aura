@@ -86,6 +86,19 @@ def format_to_file(data):
         lines.append('')  # Add a blank line between sections
     return '\n'.join(lines)
 
+# Function to merge scheme data
+def merge_scheme_data(default_data, scheme_data):
+    merged_data = default_data.copy()
+    for key, value in scheme_data.items():
+        if key in merged_data:
+            if isinstance(merged_data[key], dict) and isinstance(value, dict):
+                merged_data[key].update(value)
+            else:
+                merged_data[key] = value
+        else:
+            merged_data[key] = value
+    return merged_data
+
 # 3, 2, 1... go!
 
 # Clean and copy files
@@ -104,24 +117,20 @@ try:
                     continue
                 theme_name = os.path.basename(root)
                 print(f"🚧 {theme_name} ({dir_name}) starting...")
+                # Parse the master default.txt file
+                default_scheme_path = os.path.join(ROOT_DIR, 'theme', theme_name, 'default/scheme')
+                default_scheme = os.path.join(default_scheme_path, 'default.txt')
+                default_data = parse_file(default_scheme)
                 # Get all .txt files in the scheme folder
                 scheme_files = [f for f in os.listdir(scheme_path) if f.endswith('.txt')]
-                # Parse the default.txt file
-                default_scheme = os.path.join(ROOT_DIR, 'theme', theme_name, 'default/scheme/default.txt')
-                default_data = parse_file(default_scheme)
                 # Go over the .txt files and merge them with the default data
                 for scheme_file in scheme_files:
                     print(f"    🟡 Creating {scheme_file}")
                     scheme_data = parse_file(os.path.join(scheme_path, scheme_file))
-                    merged_data = default_data.copy()
-                    for key, value in scheme_data.items():
-                        if key in merged_data:
-                            if isinstance(merged_data[key], dict) and isinstance(value, dict):
-                                merged_data[key].update(value)
-                            else:
-                                merged_data[key] = value
-                        else:
-                            merged_data[key] = value
+                    scheme_default_data = parse_file(os.path.join(default_scheme_path, scheme_file))
+                    # Merge default schemes
+                    merged_data = merge_scheme_data(default_data, scheme_default_data)
+                    merged_data = merge_scheme_data(merged_data, scheme_data)
                     # Format the merged data and save it to a file
                     formatted_data = format_to_file(merged_data)
                     output_path = os.path.join(ROOT_DIR, 'dist', theme_name, dir_name, 'scheme', scheme_file)
@@ -135,6 +144,7 @@ try:
                     except IOError as e:
                         print(f"❌ Error writing file {output_path}: {e}")
                     print(f"✅ {theme_name} ({dir_name}) is ready!")
+
 except Exception as e:
     print(f"❌ Error: {e}")
 else:
