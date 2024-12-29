@@ -17,6 +17,13 @@
 
 If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/nagueva/aura/issues).
 
+## Supported screen sizes
+- 640x480
+- 720x480
+- 720x576
+- 720x720
+- 1280x720
+
 ## Tested devices
 
 - Anbernic RG40XX V (640x480)
