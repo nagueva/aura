@@ -143,7 +143,7 @@ try:
                         print(f"    🟢 Finished {scheme_file}!")
                     except IOError as e:
                         print(f"❌ Error writing file {output_path}: {e}")
-                    print(f"✅ {theme_name} ({dir_name}) is ready!")
+                print(f"✅ {theme_name} ({dir_name}) is ready!")
 
 except Exception as e:
     print(f"❌ Error: {e}")
