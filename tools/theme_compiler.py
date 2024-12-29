@@ -98,7 +98,8 @@ for root, dirs, files in os.walk(os.path.join(ROOT_DIR, 'theme')):
                         else:
                             merged_data[key] = value
                     formatted_data = format_to_file(merged_data)
-                    output_path = os.path.join(ROOT_DIR, 'dist', dir_name, 'scheme', scheme_file)
+                    output_path = os.path.join(ROOT_DIR, 'dist/..', os.path.relpath(scheme_path, ROOT_DIR), scheme_file)
+                    print(f"Output: {output_path}")
                     os.makedirs(os.path.dirname(output_path), exist_ok=True)
                     try:
                         with open(output_path, 'w') as file:
