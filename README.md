@@ -17,10 +17,6 @@
 
 If you encounter any issues or have suggestions for improvements, please [open an issue](https://github.com/nagueva/aura/issues).
 
-## Tested devices
-
-- Anbernic RG40XX V (640x480)
-
 ## Screenshots
 
 <table>
@@ -33,6 +29,17 @@ If you encounter any issues or have suggestions for improvements, please [open a
         <td><img src="./docs/_images/screenshot_004.png" alt="Aura - Reboot screen"></td>
     </tr>
 </table>
+
+## Supported screen sizes
+- 640x480
+- 720x480
+- 720x576
+- 720x720
+- 1280x720
+
+## Tested devices
+
+- Anbernic RG40XX V (640x480)
 
 ## Credits
 
