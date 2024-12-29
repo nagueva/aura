@@ -21,7 +21,6 @@ def open_and_resize_image(image_path, target_width, target_height, blur_radius=N
             resize_ratio = max(target_width / img.width, target_height / img.height)
             new_size = (int(img.width * resize_ratio), int(img.height * resize_ratio))
             img.thumbnail(new_size)
-            # print(f"Resized to {new_size}")
             if blur_radius:
                 img = img.filter(ImageFilter.GaussianBlur(radius=blur_radius))
             return img
@@ -65,6 +64,15 @@ def create_thumbnail(item, folder_path):
 
     # Open and prepare images
     background = open_and_resize_image(paths["screenshot"], TARGET_WIDTH, TARGET_HEIGHT, BLUR_RADIUS)
+    if background.height > 480:
+        background_posy = (480 - background.height) // 2
+    else:
+        background_posy = 0
+    if background.width > 640:
+        background_posx = (640 - background.width) // 2
+    else:
+        background_posx = 0
+
     screenshot = open_and_resize_image(paths["screenshot"], 236, 128)
     if screenshot.height > 128:
         resize_ratio = 128 / screenshot.height
@@ -93,7 +101,7 @@ def create_thumbnail(item, folder_path):
         # Create a new image for the thumbnail
         new_thumbnail = Image.new('RGB', (640, 480))
         # Paste images into the thumbnail
-        new_thumbnail.paste(background, (0, 0))
+        new_thumbnail.paste(background, (background_posx, background_posy))
         new_thumbnail.paste(gradient, (0, 0), mask=gradient)
         new_thumbnail.paste(box2dfront, (396, box2dfront_posy), mask=box2dfront)
         new_thumbnail.paste(screenshot, (396, 304), mask=screenshot)
@@ -107,7 +115,7 @@ def create_thumbnail(item, folder_path):
 try:
     items = os.listdir(INPUT_FOLDER)
     for index, item in enumerate(items):
-        # if index >= 10:
+        # if index >= 11:
         #     break
         item_path = os.path.join(INPUT_FOLDER, item)
         if os.path.isfile(item_path):
