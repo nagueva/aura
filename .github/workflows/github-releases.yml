@@ -15,16 +15,22 @@ jobs:
         run: |
           cd ${{ github.workspace }}/tools
           python theme_compiler.py
+      - name: Optimize images
+        run: |
+          for file in $(find . -type f -name 'preview.png'); do
+            convert "$file" -resize 288x216 "$file"
+          done
+          for file in $(find . -type f -name 'bootlogo.png'); do
+            convert $file $file.bmp
+            rm -rf $file
+          done
       - name: Create theme release zips
         run: |
           cd ${{ github.workspace }}/dist
           for dir in */ ; do
             cd $dir
-            convert ./preview.png -resize 288x216 ./preview.png
-            convert ./image/bootlogo.png ./image/bootlogo.bmp
-            rm -rf ./image/bootlogo.png
-            echo "${dir%/} (${{ github.event.release.tag_name }})" > ./theme_name.txt
-            cat ./theme_name.txt
+            echo -e "\n\nVersion: ${{ github.event.release.tag_name }}" >> ./credits.txt
+            cat ./credits.txt
             zip -r "../${dir%/}.zip" ./
             cd ..
           done
