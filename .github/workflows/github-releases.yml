@@ -21,7 +21,7 @@ jobs:
             convert "$file" -resize 288x216 "$file"
           done
           for file in $(find . -type f -name 'bootlogo.png'); do
-            convert $file $file.bmp
+            convert $file bootlogo.bmp
             rm -rf $file
           done
       - name: Create theme release zips
