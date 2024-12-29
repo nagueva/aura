@@ -21,7 +21,7 @@ jobs:
             convert "$file" -resize 288x216 "$file"
           done
           for file in $(find . -type f -name 'bootlogo.png'); do
-            convert $file bootlogo.bmp
+            convert $file "${file%.png}.bmp"
             rm -rf $file
           done
       - name: Create theme release zips
@@ -30,7 +30,6 @@ jobs:
           for dir in */ ; do
             cd $dir
             echo -e "\n\nVersion: ${{ github.event.release.tag_name }}" >> ./credits.txt
-            cat ./credits.txt
             zip -r "../${dir%/}.zip" ./
             cd ..
           done
