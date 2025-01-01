@@ -14,6 +14,10 @@ BORDER_RADIUS = 4
 INPUT_FOLDER = os.getenv('INPUT_FOLDER')
 OUTPUT_FOLDER = os.getenv('OUTPUT_FOLDER')
 
+# Ensure the output folder exists
+if not os.path.exists(OUTPUT_FOLDER):
+    os.makedirs(OUTPUT_FOLDER)
+
 # Function to open and resize images
 def open_and_resize_image(image_path, target_width, target_height, blur_radius=None):
     try:
@@ -97,7 +101,7 @@ def create_thumbnail(item, folder_path):
     box2dfront = add_round_border(box2dfront, BORDER_RADIUS)
 
     # Create the thumbnail
-    with Image.open("./gradient.png") as gradient:
+    with Image.open("./assets/gradient-640x480.png") as gradient:
         # Create a new image for the thumbnail
         new_thumbnail = Image.new('RGB', (640, 480))
         # Paste images into the thumbnail
