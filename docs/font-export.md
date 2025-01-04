@@ -5,8 +5,8 @@
 ## Used fonts
 
 - Default: Open Sans, Medium, 20
-- Header: Open Sans, Bold, 20
-- Footer: Bebas Neue, Regular, 22
+- Header: Open Sans SemiCondensed (custom font), Bold, 20
+- Footer: Open Sans Condensed (custom font), Bold, 18
 
 ## Converting fonts
 
