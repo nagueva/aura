@@ -26,7 +26,11 @@ If you encounter any issues or have suggestions for improvements, please [open a
     </tr>
     <tr>
         <td><img src="./docs/_images/screenshot_003.png" alt="Aura - Games list"></td>
-        <td><img src="./docs/_images/screenshot_004.png" alt="Aura - Reboot screen"></td>
+        <td><img src="./docs/_images/screenshot_004.png" alt="Aura - Games list"></td>
+    </tr>
+    <tr>
+        <td><img src="./docs/_images/screenshot_005.png" alt="Aura - Games list"></td>
+        <td><img src="./docs/_images/screenshot_006.png" alt="Aura - Reboot screen"></td>
     </tr>
 </table>
 
