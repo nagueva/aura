@@ -1,3 +1,7 @@
+#
+# This codes still needs review and refactoring, it's a quick and dirty script to compile the theme files.
+# It's not the best way to do it, but it works. ¯\_(ツ)_/¯
+#  
 import shutil
 import os
 import re
@@ -109,6 +113,7 @@ try:
     # Walk through /theme folder and merge scheme files
     for root, dirs, files in os.walk(os.path.join(ROOT_DIR, 'theme')):
         for dir_name in dirs:
+            # Get the path to the scheme folder
             scheme_path = os.path.join(root, dir_name, 'scheme')
             # Check if the scheme folder exists and is a directory
             if os.path.exists(scheme_path) and os.path.isdir(scheme_path):
@@ -117,19 +122,25 @@ try:
                     continue
                 theme_name = os.path.basename(root)
                 print(f"🚧 {theme_name} ({dir_name}) starting...")
-                # Parse the master default.txt file
-                default_scheme_path = os.path.join(ROOT_DIR, 'theme', theme_name, 'default/scheme')
-                default_scheme = os.path.join(default_scheme_path, 'default.txt')
-                default_data = parse_file(default_scheme)
+
+                # Get the default scheme files from the theme and scheme folders
+                theme_default_scheme_path = os.path.join(ROOT_DIR, 'theme', theme_name, 'default/scheme')
+                theme_default_scheme = os.path.join(theme_default_scheme_path, 'default.txt')
+                theme_default_scheme_data = parse_file(theme_default_scheme)
+                scheme_default_scheme = os.path.join(scheme_path, 'default.txt')
+                scheme_default_scheme_data = parse_file(scheme_default_scheme)
                 # Get all .txt files in the scheme folder
                 scheme_files = [f for f in os.listdir(scheme_path) if f.endswith('.txt')]
-                # Go over the .txt files and merge them with the default data
                 for scheme_file in scheme_files:
                     print(f"    🟡 Creating {scheme_file}")
+                    # Get the scheme data from default
+                    theme_scheme_data = parse_file(os.path.join(theme_default_scheme_path, scheme_file))
                     scheme_data = parse_file(os.path.join(scheme_path, scheme_file))
-                    scheme_default_data = parse_file(os.path.join(default_scheme_path, scheme_file))
-                    # Merge default schemes
-                    merged_data = merge_scheme_data(default_data, scheme_default_data)
+                    # Merge default with specific scheme (theme level)
+                    merged_data = merge_scheme_data(theme_default_scheme_data, theme_scheme_data)
+                    # Merge with default scheme (scheme level)
+                    merged_data = merge_scheme_data(merged_data, scheme_default_scheme_data)
+                    # Finally merge with current scheme
                     merged_data = merge_scheme_data(merged_data, scheme_data)
                     # Format the merged data and save it to a file
                     formatted_data = format_to_file(merged_data)
