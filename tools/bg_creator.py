@@ -24,10 +24,25 @@ def open_and_resize_image(image_path, target_width, target_height, blur_radius=N
         with Image.open(image_path).convert("RGBA") as img:
             resize_ratio = max(target_width / img.width, target_height / img.height)
             new_size = (int(img.width * resize_ratio), int(img.height * resize_ratio))
+            
+            # Ensure the new size is at least 640x480 while maintaining aspect ratio
+            if new_size[0] < 640:
+                resize_ratio = 640 / img.width
+                new_size = (640, int(img.height * resize_ratio))
+            if new_size[1] < 480:
+                resize_ratio = 480 / img.height
+                new_size = (int(img.width * resize_ratio), 480)
+            
             img.thumbnail(new_size)
+
+            if img.width < target_width or img.height < target_height:
+                img = img.resize((target_width, target_height))
+
             if blur_radius:
                 img = img.filter(ImageFilter.GaussianBlur(radius=blur_radius))
+
             return img
+        
     except IOError as e:
         logging.error(f"Error opening image {image_path}: {e}")
         return None
@@ -68,6 +83,7 @@ def create_thumbnail(item, folder_path):
 
     # Open and prepare images
     background = open_and_resize_image(paths["screenshot"], TARGET_WIDTH, TARGET_HEIGHT, BLUR_RADIUS)
+
     if background.height > 480:
         background_posy = (480 - background.height) // 2
     else:
@@ -76,6 +92,7 @@ def create_thumbnail(item, folder_path):
         background_posx = (640 - background.width) // 2
     else:
         background_posx = 0
+
 
     screenshot = open_and_resize_image(paths["screenshot"], 236, 128)
     if screenshot.height > 128:
@@ -91,7 +108,7 @@ def create_thumbnail(item, folder_path):
         new_width = int(box2dfront.width * resize_ratio)
         box2dfront = box2dfront.resize((new_width, 248))
         box2dfront_posy = 48
-    elif box2dfront.width > 236:
+    if box2dfront.width > 236:
         resize_ratio = 236 / box2dfront.width
         new_height = int(box2dfront.height * resize_ratio)
         box2dfront = box2dfront.resize((236, new_height))
