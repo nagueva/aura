@@ -81,6 +81,13 @@ def create_thumbnail(item, folder_path):
         "wheel": os.path.join(folder_path, "media", "wheel", f"{game}.png")
     }
 
+    # Check if paths exist
+    for key, path in paths.items():
+        if not os.path.exists(path):
+            logging.error(f"\033[1;31m🚨 Missing image: {key}\033[0m")
+            logging.error(f"\033[1;31m❌ Skipping {index}: {item}\033[0m")
+            return
+
     # Open and prepare images
     background = open_and_resize_image(paths["screenshot"], TARGET_WIDTH, TARGET_HEIGHT, BLUR_RADIUS)
 
@@ -92,7 +99,6 @@ def create_thumbnail(item, folder_path):
         background_posx = (640 - background.width) // 2
     else:
         background_posx = 0
-
 
     screenshot = open_and_resize_image(paths["screenshot"], 236, 128)
     if screenshot.height > 128:
