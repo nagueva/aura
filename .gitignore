@@ -17,4 +17,4 @@ theme/*.zip
 ## Ignore all files in the catalogue
 catalogue/*
 ## Exception for Folder files
-!catalogue/Folder/*
+!catalogue/Folder/
