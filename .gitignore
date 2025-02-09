@@ -14,5 +14,7 @@ Thumbs.db
 .vscode/
 # Theme files
 theme/*.zip
-## Temporary: Ignore all files in the catalogue
+## Ignore all files in the catalogue
 catalogue/*
+## Exception for Folder files
+!catalogue/Folder/*
