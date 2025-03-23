@@ -11,10 +11,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow
       - name: Compile theme
         run: |
           cd ${{ github.workspace }}/tools
-          python theme-compiler.py
+          python theme_compiler.py
       - name: Create theme release zips
         run: |
           cd ${{ github.workspace }}/dist

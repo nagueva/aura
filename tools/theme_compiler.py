@@ -1,7 +1,6 @@
 from PIL import Image
 import shutil
 import os
-import re
 
 # Define the default theme directory relative to the location of this file
 ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../')
