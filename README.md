@@ -8,8 +8,8 @@
 
 ## Installation
 
-1. Download `Aura.zip` from the [releases page](https://github.com/nagueva/aura/releases).
-2. Move the `.zip` file to your device within the `MUOS/theme` folder.
+1. Download `Aura.muxthm` from the [releases page](https://github.com/nagueva/aura/releases).
+2. Move the file to your device within the `MUOS/theme` folder.
 4. Activate the theme in muOS settings.
 5. Enjoy!
 
@@ -39,6 +39,7 @@ If you encounter any issues or have suggestions for improvements, please [open a
 - 720x480
 - 720x576
 - 720x720
+- 1024x768
 - 1280x720
 
 ## Tested devices
