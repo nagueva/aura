@@ -14,28 +14,19 @@ jobs:
       - name: Compile theme
         run: |
           cd ${{ github.workspace }}/tools
-          python theme_compiler.py
-      - name: Optimize images
-        run: |
-          for file in $(find . -type f -name 'preview.png'); do
-            convert "$file" -resize 288x216 "$file"
-          done
-          for file in $(find . -type f -name 'bootlogo.png'); do
-            convert $file "${file%.png}.bmp"
-            rm -rf $file
-          done
+          python theme-compiler.py
       - name: Create theme release zips
         run: |
           cd ${{ github.workspace }}/dist
           for dir in */ ; do
             cd $dir
             echo -e "\n\n${{ github.event.release.tag_name }}" >> ./credits.txt
-            zip -r "../${dir%/}.zip" ./
+            zip -r "../${dir%/}.muxthm" ./
             cd ..
           done
       - name: Upload releases
         run: |
-          for file in ${{ github.workspace }}/dist/*.zip; do
+          for file in ${{ github.workspace }}/dist/*.muxthm; do
             echo "Uploading $file"
             gh release upload ${{ github.event.release.tag_name }} "$file" --clobber
           done
