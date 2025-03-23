@@ -12,7 +12,7 @@ TARGET_HEIGHT = 480
 BLUR_RADIUS = 4
 BORDER_RADIUS = 4
 INPUT_FOLDER = os.getenv('INPUT_FOLDER')
-OUTPUT_FOLDER = os.getenv('OUTPUT_FOLDER')
+OUTPUT_FOLDER = os.path.join(os.getenv('OUTPUT_FOLDER'), 'box')
 
 # Ensure the output folder exists
 if not os.path.exists(OUTPUT_FOLDER):
@@ -78,7 +78,7 @@ def create_thumbnail(item, folder_path):
         "box2dfront": os.path.join(folder_path, "media", "box2dfront", f"{game}.png"),
         "screenshot": os.path.join(folder_path, "media", "screenshot", f"{game}.png"),
         # "screenshottitle": os.path.join(folder_path, "media", "screenshottitle", f"{game}.png"),
-        "wheel": os.path.join(folder_path, "media", "wheel", f"{game}.png")
+        # "wheel": os.path.join(folder_path, "media", "wheel", f"{game}.png")
     }
 
     # Check if paths exist
