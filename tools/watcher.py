@@ -41,13 +41,13 @@ class Handler(FileSystemEventHandler):
             return None
         elif event.event_type == 'created':
             print(f"🆕 Created: {event.src_path}")
-            subprocess.run(["python3", DIRECTORY_TO_WATCH+"/../tools/theme_compiler.py"])
+            subprocess.run(["python3", DIRECTORY_TO_WATCH+"/../tools/aurify.py"])
         elif event.event_type == 'modified':
             print(f"🚧 Modified: {event.src_path}")
-            subprocess.run(["python3", DIRECTORY_TO_WATCH+"/../tools/theme_compiler.py"])
+            subprocess.run(["python3", DIRECTORY_TO_WATCH+"/../tools/aurify.py"])
         elif event.event_type == 'deleted':
             print(f"❌ Deleted: {event.src_path}")
-            subprocess.run(["python3", DIRECTORY_TO_WATCH+"/../tools/theme_compiler.py"])
+            subprocess.run(["python3", DIRECTORY_TO_WATCH+"/../tools/aurify.py"])
 if __name__ == '__main__':
     w = Watcher()
     w.run()

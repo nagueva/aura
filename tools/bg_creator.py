@@ -12,7 +12,7 @@ TARGET_HEIGHT = 480
 BLUR_RADIUS = 4
 BORDER_RADIUS = 4
 INPUT_FOLDER = os.getenv('INPUT_FOLDER')
-OUTPUT_FOLDER = os.getenv('OUTPUT_FOLDER')
+OUTPUT_FOLDER = os.path.join(os.getenv('OUTPUT_FOLDER'), 'box')
 
 # Ensure the output folder exists
 if not os.path.exists(OUTPUT_FOLDER):
@@ -24,10 +24,25 @@ def open_and_resize_image(image_path, target_width, target_height, blur_radius=N
         with Image.open(image_path).convert("RGBA") as img:
             resize_ratio = max(target_width / img.width, target_height / img.height)
             new_size = (int(img.width * resize_ratio), int(img.height * resize_ratio))
+            
+            # Ensure the new size is at least 640x480 while maintaining aspect ratio
+            if new_size[0] < 640:
+                resize_ratio = 640 / img.width
+                new_size = (640, int(img.height * resize_ratio))
+            if new_size[1] < 480:
+                resize_ratio = 480 / img.height
+                new_size = (int(img.width * resize_ratio), 480)
+            
             img.thumbnail(new_size)
+
+            if img.width < target_width or img.height < target_height:
+                img = img.resize((target_width, target_height))
+
             if blur_radius:
                 img = img.filter(ImageFilter.GaussianBlur(radius=blur_radius))
+
             return img
+        
     except IOError as e:
         logging.error(f"Error opening image {image_path}: {e}")
         return None
@@ -63,11 +78,19 @@ def create_thumbnail(item, folder_path):
         "box2dfront": os.path.join(folder_path, "media", "box2dfront", f"{game}.png"),
         "screenshot": os.path.join(folder_path, "media", "screenshot", f"{game}.png"),
         # "screenshottitle": os.path.join(folder_path, "media", "screenshottitle", f"{game}.png"),
-        "wheel": os.path.join(folder_path, "media", "wheel", f"{game}.png")
+        # "wheel": os.path.join(folder_path, "media", "wheel", f"{game}.png")
     }
+
+    # Check if paths exist
+    for key, path in paths.items():
+        if not os.path.exists(path):
+            logging.error(f"\033[1;31m🚨 Missing image: {key}\033[0m")
+            logging.error(f"\033[1;31m❌ Skipping {index}: {item}\033[0m")
+            return
 
     # Open and prepare images
     background = open_and_resize_image(paths["screenshot"], TARGET_WIDTH, TARGET_HEIGHT, BLUR_RADIUS)
+
     if background.height > 480:
         background_posy = (480 - background.height) // 2
     else:
@@ -91,7 +114,7 @@ def create_thumbnail(item, folder_path):
         new_width = int(box2dfront.width * resize_ratio)
         box2dfront = box2dfront.resize((new_width, 248))
         box2dfront_posy = 48
-    elif box2dfront.width > 236:
+    if box2dfront.width > 236:
         resize_ratio = 236 / box2dfront.width
         new_height = int(box2dfront.height * resize_ratio)
         box2dfront = box2dfront.resize((236, new_height))
