@@ -8,13 +8,10 @@ build/
 # Ignore OS-specific files
 .DS_Store
 Thumbs.db
+__MACOSX/
 # Ignore environment variable files
 .env
 # Ignore IDE-specific files
 .vscode/
 # Theme files
 theme/*.zip
-## Ignore all files in the catalogue
-catalogue/*
-## Exception for Folder files
-!catalogue/Folder/
